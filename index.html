@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            font-family:Arial, Helvetica, sans-serif;
+        }
+      h2 {
+        color: rgb(4, 129, 0);
+        font-size: 18px;
+      }
+      #spec, #chooseNum, #checkNum, #check{
+        color: brown;
+      }
+      #spec:hover, #chooseNum:hover, #checkNum:hover, #check:hover {
+        cursor: pointer;
+        color: rgb(218, 0, 189);
+      }
+      #usd, #squareNotMore {
+        display: flex;
+        flex-direction: column;
+      }
+      p {
+        display: inline;
+        padding-left: 5px;
+      }
+      .holder,
+      .block {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .block {
+        flex-direction: column;
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="row">
+      <h2>Вивести на сторінку в один рядок через кому числа від 10 до 20.</h2>
+    </div>
+    <div id="square">
+      <h2>Вивести квадрати чисел від 10 до 20.</h2>
+    </div>
+    <div id="tablePart">
+      <h2>Вивести таблицю множення на 7.</h2>
+    </div>
+    <div id="allSum">
+      <h2>Знайти суму всіх цілих чисел від 1 до 15.</h2>
+    </div>
+    <div id="multiply">
+      <h2>Знайти добуток усіх цілих чисел від 15 до 35.</h2>
+    </div>
+    <div id="midle">
+      <h2>Знайти середнє арифметичне всіх цілих чисел від 1 до 500.</h2>
+    </div>
+    <div id="evenSum">
+      <h2>Вивести суму лише парних чисел в діапазоні від 30 до 80.</h2>
+    </div>
+    <div id="divisible">
+      <h2>Вивести всі числа в діапазоні від 100 до 200 кратні 3.</h2>
+    </div>
+    <div id="divOfNum">
+      <h2>
+        Дано натуральне число. Знайти та вивести на сторінку всі його дільники. <span id="spec">Обрати число</span>
+      </h2>
+    </div>
+    <div id="evenDiv">
+        <h2>+ визначити кількість його парних дільників.</h2>
+    </div>
+    <div id="divEvenSum">
+        <h2>+ знайти суму його парних дільників.</h2>
+    </div>
+    <h2>Надрукувати повну таблицю множення від 1 до 10.</h2>
+    <div class="holder">
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+    </div>
+    <div id="step">
+        <h2>Вивести числа від 20 до 30 через пропуск, використовуючи крок 0,5 (20 20,5 21 21,5….).</h2>
+    </div>
+    <div id="usd">
+        <h2>Один долар коштує 27 гривень. Вивести дані з розрахунком вартості 10, 20, 30... 100 доларів.</h2>
+    </div>
+    <div id="squareNotMore">
+        <h2>Дано ціле число. Вивести всі цілі числа від 1 до 100, квадрат яких не перевищує числа N. <span id="chooseNum">Напишіть ціле число</span></h2>
+    </div>
+    <div id="simple">
+        <h2>Дано ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1, які не мають інших дільників крім 1 і себе). <span id="checkNum">Перевірити число.</span></h2>
+    </div>
+    <div id="takeBySquare">
+        <h2>Дано деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна). <span id="check">Перевірити число.</span></h2>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
