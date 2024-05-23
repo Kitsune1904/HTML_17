@@ -97,7 +97,7 @@ chooseNum.addEventListener("click", () => {
       ? fillAndAddParagraph(
           "id",
           "squareNotMore",
-          `квадрат ${i} (${i**2}) не перевищує числа ${num}`
+          `квадрат ${i} (${i ** 2}) не перевищує числа ${num}`
         )
       : 0;
   }
@@ -119,7 +119,7 @@ checkNum.addEventListener("click", () => {
     }
   }
 
-  text = isSimple ? `Число ${num} просте` : `Число ${num} НЕ просте`
+  text = isSimple ? `Число ${num} просте` : `Число ${num} НЕ просте`;
 
   fillAndAddParagraph("id", "simple", `${text}`);
 });
@@ -128,10 +128,12 @@ const check = document.getElementById("check");
 check.addEventListener("click", () => {
   const num = +prompt("Оберіть число для пеервірки", "9");
   let text = `Неможливо одержати число ${num} шляхом зведення числа 3 у деякий ступінь`;
+
   for (let i = 1; i <= num; i++) {
     3 ** i === num
       ? (text = `Можна одержати число ${num} шляхом зведення числа 3 у  ступінь ${i}`)
       : 0;
   }
+
   fillAndAddParagraph("id", "takeBySquare", `${text}`);
 });
