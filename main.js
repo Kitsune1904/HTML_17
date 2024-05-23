@@ -13,8 +13,7 @@ const fillAndAddParagraph = (type, name, text, element = "p", que = 0) => {
 };
 
 for (let i = 10; i <= 20; i++) {
-    let text = `${i},`;
-    i === 20 ? text = `${i}.` : text
+  let text = i === 20 ? `${i}.` : `${i},`;
   fillAndAddParagraph("id", "row", text);
 }
 
@@ -23,7 +22,7 @@ for (let i = 10; i <= 20; i++) {
 }
 
 for (let i = 1; i <= 10; i++) {
-  fillAndAddParagraph("id", "tablePart", `${i * 7}`);
+  fillAndAddParagraph("id", "tablePart", `${i} * ${7} = ${i * 7}`);
 }
 
 let sum = 0;
@@ -98,7 +97,7 @@ chooseNum.addEventListener("click", () => {
       ? fillAndAddParagraph(
           "id",
           "squareNotMore",
-          `квадрат ${i} не перевищує числа ${num}`
+          `квадрат ${i} (${i**2}) не перевищує числа ${num}`
         )
       : 0;
   }
@@ -109,28 +108,30 @@ checkNum.addEventListener("click", () => {
   const num = prompt("Оберіть число для пеервірки", "5");
   let isSimple = true;
   let text;
-    if(num<=1){
-        isSimple = false;
+  if (num <= 1) {
+    isSimple = false;
+  }
+
+  for (let i = 2; i * i <= num; i++) {
+    if (num % i === 0) {
+      isSimple = false;
+      break;
     }
+  }
 
-    for(let i=2; i*i<=num; i++){
-        if(num%i===0){
-            isSimple = false;
-            break;
-        }
-    }
+  text = isSimple ? `Число ${num} просте` : `Число ${num} НЕ просте`
 
-    isSimple ? text = `Число ${num} просте` : text = `Число ${num} НЕ просте`
-
-    fillAndAddParagraph("id", "simple", `${text}`);
+  fillAndAddParagraph("id", "simple", `${text}`);
 });
 
 const check = document.getElementById("check");
 check.addEventListener("click", () => {
-    const num = +prompt("Оберіть число для пеервірки", "9");
-    let text = `Неможливо одержати число ${num} шляхом зведення числа 3 у деякий ступінь`;
-    for(let i = 1; i <= num; i++) {
-        3**i === num ? text = `Можна одержати число ${num} шляхом зведення числа 3 у  ступінь ${i}` : 0
-    }
-    fillAndAddParagraph("id", "takeBySquare", `${text}`);
-})
+  const num = +prompt("Оберіть число для пеервірки", "9");
+  let text = `Неможливо одержати число ${num} шляхом зведення числа 3 у деякий ступінь`;
+  for (let i = 1; i <= num; i++) {
+    3 ** i === num
+      ? (text = `Можна одержати число ${num} шляхом зведення числа 3 у  ступінь ${i}`)
+      : 0;
+  }
+  fillAndAddParagraph("id", "takeBySquare", `${text}`);
+});
