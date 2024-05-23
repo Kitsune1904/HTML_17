@@ -13,7 +13,9 @@ const fillAndAddParagraph = (type, name, text, element = "p", que = 0) => {
 };
 
 for (let i = 10; i <= 20; i++) {
-  fillAndAddParagraph("id", "row", `${i}`);
+    let text = `${i},`;
+    i === 20 ? text = `${i}.` : text
+  fillAndAddParagraph("id", "row", text);
 }
 
 for (let i = 10; i <= 20; i++) {
